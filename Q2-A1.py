@@ -26,11 +26,11 @@ cv2.waitKey(0)
 img2 = cv2.imread(r"C:\Users\Saeed Bafana\OneDrive\Desktop\snapshots\image2.jpg")
 cv2.imshow("Second Image", img2)
 
-# ii. Resize the second image to match the first image's dimensions
+# ii. Resizing the second image to match the first image's dimensions 
 img2_resized = cv2.resize(img2, (img1.shape[1], img1.shape[0]))
 cv2.imshow("Resized Second Image", img2_resized)
 
-# iii. Perform linear blending with user-defined alpha value
+# iii. Perform linear blending with alpha value
 alpha = float(input("Enter alpha value between 0 and 1: "))  
 blend_img = cv2.addWeighted(img1, 1 - alpha, img2_resized, alpha, 0)
 cv2.imshow("Linear Blend Result", blend_img)
